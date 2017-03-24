@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "run-s clear:js build:prod",
-    "build:debug": "webpack --config config/webpack.config.debug.js",
-    "build:prod": "webpack --config config/webpack.config.prod.js",
+    "build:dev": "cross-env NODE_ENV=development webpack --config config/webpack.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config config/webpack.config.js",
     "clear": "run-p clear:dir clear:js",
     "clear:dir": "rimraf build coverage .nyc_output",
     "clear:js": "rimraf js/bundle.js js/bundle.map",
