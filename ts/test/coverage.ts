@@ -1,6 +1,6 @@
-import * as Frames from './frames';
-import Ticker from './ticker';
-import * as Fonts from './font';
+import * as Frames from 'frames';
+import Ticker from 'ticker';
+import * as Fonts from 'font';
 
 export {Frames};
 export {Ticker};

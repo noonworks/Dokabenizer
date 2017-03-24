@@ -1,4 +1,4 @@
-import * as Fonts from './font';
+import * as Fonts from 'font';
 import { test } from 'ava';
 
 test('create with default values', async t => {

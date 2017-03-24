@@ -1,4 +1,4 @@
-import * as Frames from './frames';
+import * as Frames from 'frames';
 import { test } from 'ava';
 import { AssertContext } from 'ava';
 

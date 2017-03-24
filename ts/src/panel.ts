@@ -1,4 +1,4 @@
-import { Tile } from './tile';
+import { Tile } from 'tile';
 import * as THREE from 'three';
 
 const PADDING = 10;

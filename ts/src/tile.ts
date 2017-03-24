@@ -1,4 +1,4 @@
-import * as Fonts from './font';
+import * as Fonts from 'font';
 
 const MARGIN = 8;
 
