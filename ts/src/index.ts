@@ -25,11 +25,17 @@ function dokabenize(): void {
   const setting = new Setting();
   console.log('dokabenizing...');
   const tile = new Tile();
+  tile.font = setting.font;
+  tile.bgcolor = setting.bgcolor;
   tile.drawText(setting.text);
   const panel = new Panel(tile);
+  let trans: number | null = null;
+  if (setting.bgcolor.length === 0) {
+    trans = 0x000000;
+  }
   const gif = new GIF({
     quality: 10,
-    transparent: 0x000000,
+    transparent: trans,
     workerScript: 'js/gif.worker.js',
     workers: 2
   });

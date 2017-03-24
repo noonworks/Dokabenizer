@@ -13,6 +13,13 @@
 <tr><th>動く時間（ミリ秒）</th><td><input type="text" id="in_time" value="1500" /></td></tr>
 <tr><th>前の間（ミリ秒）</th><td><input type="text" id="in_before" value="800" /></td></tr>
 <tr><th>後の間（ミリ秒）</th><td><input type="text" id="in_after" value="1700" /></td></tr>
+<tr><th>背景色</th><td>
+  <input type="radio" name="in_g_bgcolor" id="in_tran" value="0" checked="checked" /><label for="in_tran">透過</label>
+  or 
+  <input type="radio" name="in_g_bgcolor" id="in_bg" value="1" /><label for="in_bg">色指定</label>
+  <input type="color" id="in_bgcolor" value="#ffffff" /></td></tr>
+<tr><th>文字の色</th><td><input type="color" id="in_fillcolor" value="#c82828" /></td></tr>
+<tr><th>文字の枠の色</th><td><input type="color" id="in_strokecolor" value="#640a1e" /></td></tr>
 <tr><td colspan="2" style="text-align:center"><button id="dokabenize">ドカベン</button></td></tr>
 </table>
 <div id="result"></div>

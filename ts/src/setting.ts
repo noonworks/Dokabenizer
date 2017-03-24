@@ -1,8 +1,11 @@
 import { Manager } from 'frames';
+import * as Fonts from 'font';
 
 export class Setting {
   public text: string;
   private _mgr: Manager;
+  private _font: Fonts.Font;
+  private _bgcolor: string;
 
   constructor() {
     this.text = this.readValue('in_text');
@@ -15,6 +18,22 @@ export class Setting {
     const after = this.readInt('in_after', 0, 1700);
     this._mgr = new Manager(fps, msec, before, after);
     this.apply();
+    // font color
+    this._font = new Fonts.Font();
+    const fill = this.getColor('in_fillcolor');
+    const stroke = this.getColor('in_strokecolor');
+    if (fill.length > 0) {
+      this._font.fill = fill;
+    }
+    if (stroke.length > 0) {
+      this._font.stroke = stroke;
+    }
+    // background color
+    this._bgcolor = '';
+    const bgBg = this.checked('in_bg');
+    if (bgBg) {
+      this._bgcolor = this.getColor('in_bgcolor');
+    }
   }
 
   public set fps(v: number) {
@@ -46,12 +65,45 @@ export class Setting {
     return this._mgr;
   }
 
+  public get font(): Fonts.Font {
+    return this._font;
+  }
+
+  public get bgcolor(): string {
+    return this._bgcolor;
+  }
+
   public apply(): void {
     (<HTMLInputElement> document.getElementById('in_text')).value = this.text;
     (<HTMLInputElement> document.getElementById('in_fps')).value = '' + this._mgr.fps;
     (<HTMLInputElement> document.getElementById('in_time')).value = '' + this._mgr.time;
     (<HTMLInputElement> document.getElementById('in_before')).value = '' + this._mgr.before;
     (<HTMLInputElement> document.getElementById('in_after')).value = '' + this._mgr.after;
+  }
+
+  private getColor(id: string): string {
+    const v = this.readValue(id);
+    if (v.length !== 7) {
+      return '';
+    }
+    const ret = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(v);
+    if (ret === null || ret.length <= 3) {
+      return '';
+    }
+    const arr: string[] = [];
+    for (let i = 1; i <= 3; i++) {
+      const c = parseInt(ret[i], 16);
+      if (isNaN(c)) {
+        return '';
+      }
+      arr.push('' + c);
+    }
+    return 'rgb(' + arr.join(',') + ')';
+  }
+
+  private checked(id: string): boolean {
+    const e = <HTMLInputElement> document.getElementById(id);
+    return (e !== null && e.checked);
   }
 
   private readValue(id: string): string {
