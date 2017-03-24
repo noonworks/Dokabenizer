@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "es5",
+    "target": "es2015",
     "noImplicitAny": true,
-    "sourceMap": true
+    "inlineSourceMap": true,
+    "outDir": "build"
   }
 }

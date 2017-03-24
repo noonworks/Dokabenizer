@@ -14,7 +14,13 @@ module.exports = {
     loaders: [
       {
         test: /\.ts$/,
-        loader: 'ts-loader'
+        loader: 'ts-loader',
+        options: {
+          compilerOptions: {
+            'target': 'es5',
+            'lib': ['ES2015', 'DOM']
+          }
+        }
       }
     ]
   },

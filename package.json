@@ -7,7 +7,10 @@
   "scripts": {
     "build": "webpack --config config/webpack.config.debug.js",
     "build:prod": "webpack --config config/webpack.config.prod.js",
-    "lint": "tslint ts/**/*.ts"
+    "lint": "tslint ts/**/*.ts",
+    "test:tsc": "tsc",
+    "test:run": "ava build/**/*.test.js",
+    "test": "run-s test:tsc test:run"
   },
   "devDependencies": {
     "ava": "^0.18.2",
