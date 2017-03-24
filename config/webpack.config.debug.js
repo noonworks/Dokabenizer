@@ -3,12 +3,13 @@ var path = require('path');
 
 module.exports = {
   context: path.join(__dirname, '..'),
-  entry: './ts/index.ts',
+  entry: './ts/src/index.ts',
   output: {
     filename: 'js/bundle.js'
   },
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.js'],
+    modules: ['.', 'ts/src/', 'node_modules']
   },
   module: {
     loaders: [

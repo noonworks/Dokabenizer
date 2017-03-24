@@ -13,8 +13,8 @@
     "clear:js": "rimraf js/bundle.js js/bundle.map",
     "lint": "tslint ts/**/*.ts",
     "test:tsc": "tsc",
-    "test:run": "ava build/**/*.test.js",
-    "test:cover": "nyc ava build/**/*.test.js",
+    "test:run": "cross-env NODE_PATH=build/src ava build/**/*.test.js",
+    "test:cover": "cross-env NODE_PATH=build/src nyc ava build/**/*.test.js",
     "test": "run-s lint test:tsc test:cover"
   },
   "devDependencies": {
