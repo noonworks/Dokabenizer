@@ -14,9 +14,11 @@
     "test": "run-s lint test:tsc test:cover"
   },
   "devDependencies": {
+    "@types/three": "^0.84.3",
     "ava": "^0.18.2",
     "npm-run-all": "^4.0.2",
     "nyc": "^10.1.2",
+    "three": "^0.84.0",
     "ts-loader": "^2.0.3",
     "tslint": "^4.5.1",
     "typescript": "^2.2.1",
