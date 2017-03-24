@@ -1,0 +1,36 @@
+{
+  "name": "dokabenizer",
+  "version": "0.1.0",
+  "repository": "https://github.com/noonworks/dokabenizer",
+  "author": "noonworks <noonworks@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --inline --hot --config config/webpack.config.js",
+    "build": "run-s clear:js build:prod",
+    "build:dev": "cross-env NODE_ENV=development webpack --config config/webpack.config.js",
+    "build:prod": "cross-env NODE_ENV=production webpack --config config/webpack.config.js",
+    "clear": "run-p clear:dir clear:js",
+    "clear:dir": "rimraf build coverage .nyc_output",
+    "clear:js": "rimraf js/bundle.js js/bundle.map",
+    "lint": "tslint ts/**/*.ts -e ts/typings/*.d.ts",
+    "test:tsc": "tsc",
+    "test:run": "cross-env NODE_PATH=build/src ava build/**/*.test.js",
+    "test:cover": "cross-env NODE_PATH=build/src nyc ava build/**/*.test.js",
+    "test": "run-s lint test:tsc test:cover"
+  },
+  "devDependencies": {
+    "@types/three": "^0.84.3",
+    "ava": "^0.18.2",
+    "cross-env": "^3.2.4",
+    "npm-run-all": "^4.0.2",
+    "nyc": "^10.1.2",
+    "rimraf": "^2.6.1",
+    "three": "^0.84.0",
+    "ts-loader": "^2.0.3",
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.1",
+    "webpack": "^2.3.1",
+    "webpack-dev-server": "^2.4.2",
+    "webpack-merge": "^4.1.0"
+  }
+}

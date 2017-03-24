@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "ts/src/*",
+        "ts/typings/*"
+      ]
+    },
+    "noImplicitAny": true,
+    "inlineSourceMap": true,
+    "strictNullChecks": true,
+    "outDir": "build"
+  }
+}
