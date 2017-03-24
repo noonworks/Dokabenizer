@@ -9,6 +9,10 @@ export default class Ticker {
     this._paused = true;
   }
 
+  get paused(): boolean {
+    return this._paused;
+  }
+
   public start(): void {
     this.reset();
     this.restart();
