@@ -15,6 +15,7 @@
   "devDependencies": {
     "ava": "^0.18.2",
     "npm-run-all": "^4.0.2",
+    "nyc": "^10.1.2",
     "ts-loader": "^2.0.3",
     "tslint": "^4.5.1",
     "typescript": "^2.2.1",
