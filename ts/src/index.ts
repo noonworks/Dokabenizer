@@ -1,18 +1,25 @@
+/// <reference path="../typings/gif.d.ts" />
 import { Setting } from 'setting';
 import { Tile } from 'tile';
 import { Panel } from 'panel';
 
-/*
 function afterCreated(blob: number): void {
   let img = document.getElementById('dokabenized_img');
   if (img === null) {
     img = document.createElement('img');
     img.id = 'dokabenized_img';
-    // document.body.appendChild(img);
+    const e = document.getElementById('result');
+    if (e === null) {
+      const div = document.createElement('div');
+      div.id = 'result';
+      div.appendChild(img);
+      document.body.appendChild(div);
+    } else {
+      e.appendChild(img);
+    }
   }
-  // img.src = URL.createObjectURL(blob);
+  (<HTMLImageElement> img).src = URL.createObjectURL(blob);
 }
-*/
 
 function dokabenize(): void {
   const setting = new Setting();
@@ -20,26 +27,22 @@ function dokabenize(): void {
   const tile = new Tile();
   tile.drawText(setting.text);
   const panel = new Panel(tile);
-  /*
   const gif = new GIF({
-    workers: 2,
     quality: 10,
-    workerScript: 'js/gif.worker.js'
+    transparent: 0x000000,
+    workerScript: 'js/gif.worker.js',
+    workers: 2
   });
-  */
   for (let i = 0; i <= setting.manager.maxFrame; i++) {
-    const delay = setting.manager.getDelay(i);
-    if (delay === 0) {
+    const d = setting.manager.getDelay(i);
+    if (d === 0) {
       continue;
     }
-    console.log(delay);
-    panel.render(setting.manager.getAngle(0));
-    // gif.addFrame(panel.canvas, {delay: delay, copy: true});
+    panel.render(setting.manager.getAngle(i));
+    gif.addFrame(panel.canvas, {delay: d, copy: true});
   }
-  /*
   gif.on('finished', afterCreated);
   gif.render();
-  */
 }
 
 function initialize(): void {
