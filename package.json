@@ -12,7 +12,7 @@
     "clear": "run-p clear:dir clear:js",
     "clear:dir": "rimraf build coverage .nyc_output",
     "clear:js": "rimraf js/bundle.js js/bundle.map",
-    "lint": "tslint ts/**/*.ts",
+    "lint": "tslint ts/**/*.ts -e ts/typings/*.d.ts",
     "test:tsc": "tsc",
     "test:run": "cross-env NODE_PATH=build/src ava build/**/*.test.js",
     "test:cover": "cross-env NODE_PATH=build/src nyc ava build/**/*.test.js",

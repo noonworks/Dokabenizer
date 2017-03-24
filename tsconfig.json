@@ -6,7 +6,8 @@
     "paths": {
       "*": [
         "*",
-        "ts/src/*"
+        "ts/src/*",
+        "ts/typings/*"
       ]
     },
     "noImplicitAny": true,
