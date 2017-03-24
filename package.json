@@ -1,0 +1,10 @@
+{
+  "name": "dokabenizer",
+  "version": "0.1.0",
+  "repository": "https://github.com/noonworks/dokabenizer",
+  "author": "noonworks <noonworks@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.2.1"
+  }
+}
