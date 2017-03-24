@@ -5,7 +5,7 @@ module.exports = {
   context: path.join(__dirname, '..'),
   entry: './ts/index.ts',
   output: {
-    filename: 'bundle.js'
+    filename: 'js/bundle.js'
   },
   resolve: {
     extensions: ['.ts', '.js']
