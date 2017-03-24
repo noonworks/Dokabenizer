@@ -6,10 +6,12 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --config config/webpack.config.debug.js",
-    "build:prod": "webpack --config config/webpack.config.prod.js"
+    "build:prod": "webpack --config config/webpack.config.prod.js",
+    "lint": "tslint ts/**/*.ts"
   },
   "devDependencies": {
     "ts-loader": "^2.0.3",
+    "tslint": "^4.5.1",
     "typescript": "^2.2.1",
     "webpack": "^2.3.1"
   }
