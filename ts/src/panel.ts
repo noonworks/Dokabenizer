@@ -63,7 +63,7 @@ export class Panel {
     // h0 = harf of the tile height
     const h0px = this._tile.canvas.height / 2;
     // z0 = camera to near clip = 1
-    const z0px = height / 2 / Math.tan(Math.PI * FOV / 360);
+    const z0px = canvasHeight / 2 / Math.tan(Math.PI * FOV / 360);
     // h1 = harf of the plane height = 1 / 2 = z0 / 2
     const h1px = z0px / 2;
     // z1 = camera to the plane (calculate with Similarity of triangle)
