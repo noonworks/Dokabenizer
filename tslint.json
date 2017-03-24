@@ -43,6 +43,8 @@
     "no-unused-variable": true,
     "no-use-before-declare": true,
     "no-var-keyword": true,
+    "prefer-const": true,
+    "ordered-imports": "any",
     "radix": true,
     "switch-default": true,
     "triple-equals": true,
@@ -67,6 +69,10 @@
       "avoid-escape"
     ],
     "semicolon": true,
+    "arrow-parens": [
+      true,
+      "ban-single-arg-parens"
+    ],
     "one-line": [
       true,
       "check-catch",

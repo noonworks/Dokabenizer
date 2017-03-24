@@ -10,7 +10,8 @@
     "lint": "tslint ts/**/*.ts",
     "test:tsc": "tsc",
     "test:run": "ava build/**/*.test.js",
-    "test": "run-s test:tsc test:run"
+    "test:cover": "nyc ava build/**/*.test.js",
+    "test": "run-s lint test:tsc test:cover"
   },
   "devDependencies": {
     "ava": "^0.18.2",
