@@ -1,4 +1,4 @@
-import Ticker from './ticker';
+import Ticker from 'ticker';
 import test from 'ava';
 
 function doAfter(func: () => number, delay: number): Promise<number> {

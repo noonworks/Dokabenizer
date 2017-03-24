@@ -2,6 +2,13 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es2015",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*",
+        "ts/src/*"
+      ]
+    },
     "noImplicitAny": true,
     "inlineSourceMap": true,
     "strictNullChecks": true,
