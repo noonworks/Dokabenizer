@@ -4,6 +4,10 @@
   "repository": "https://github.com/noonworks/dokabenizer",
   "author": "noonworks <noonworks@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "webpack --config config/webpack.config.debug.js",
+    "build:prod": "webpack --config config/webpack.config.prod.js"
+  },
   "devDependencies": {
     "ts-loader": "^2.0.3",
     "typescript": "^2.2.1",
